@@ -327,9 +327,11 @@ function startGame()
 			
 			if not gameWon and isGameActive then
 				isPlayerInputDisabled = true
+				gameWon = false
 				blinkDialog(false)
 				CreateThread(function()
 					Wait(3000)
+					callbackFn(2,'ran out of time')
 					SendNUIMessage({type  = 'fail'})
 					isGameActive = false
 				end)
