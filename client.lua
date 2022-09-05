@@ -229,6 +229,8 @@ end
 
 
 function showTimer()
+	if(not timeString[1] or not timeString[2] or not timeString[3] or not timeString[4]) then return end
+
 	drawSprite(
 		'mphackinggame', 
 		'numbers_'..timeString[1], 
