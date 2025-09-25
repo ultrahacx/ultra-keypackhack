@@ -176,7 +176,7 @@ function shuffle(t)
 	end
 	for i = #tbl, 2, -1 do
 		Wait(0)
-		math.randomseed(GetGameTimer()*GetFrameTime())
+		math.randomseed(math.ceil(GetGameTimer()*GetFrameTime()))
 		local j = math.random(i)
 		tbl[i], tbl[j] = tbl[j], tbl[i]
 	end
@@ -212,7 +212,7 @@ function generatePattern(n, a, b)
 	end
 	numbers = shuffle(numbers)
 
-	math.randomseed(GetGameTimer()*GetFrameTime()*GetRandomIntInRange(1000, 36415))
+	math.randomseed(math.ceil(GetGameTimer()*GetFrameTime()*GetRandomIntInRange(1000, 36415)))
 	numbers[#numbers+1] = math.random(a, b)
 	numbers = shuffle(numbers)
 
